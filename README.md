@@ -36,5 +36,5 @@ I assume you already know how Server Side GTM works.
 - On your Backend GTM Container (Server) go to 'Admin' in the top menu, then to 'Container Settings' and set the 'Server container URLs' field also to your website URL, for example `https://yourwebsite.com`
 
 ------
-- Created by [DeoVero BV](https://deovero.com) / Jeroen Vermeulen
+- Created by [DeoVero BV](https://deovero.com) / [Jeroen Vermeulen](https://www.linkedin.com/in/jeroenvermeuleneu/)
 - Thanks to [@jenssegers](https://www.linkedin.com/in/jenssegers/) for his excellent [PHP Proxy](https://github.com/jenssegers/php-proxy) script which does the heavy lifting.
