@@ -34,3 +34,7 @@ composer install
 I assume you already know how Server Side GTM works.
 - On your Frontend GTM Container (Web) update the `server_container_url` parameter of your 'Google Tag' to your website URL, for example `https://yourwebsite.com`
 - On your Backend GTM Container (Server) go to 'Admin' in the top menu, then to 'Container Settings' and set the 'Server container URLs' field also to your website URL, for example `https://yourwebsite.com`
+
+------
+Created by DeoVero BV / Jeroen Vermeulen - https://deovero.com
+Thanks to @jenssegers for his excellent PHP Proxy script which does the heavy lifting.
