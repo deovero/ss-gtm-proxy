@@ -1,4 +1,4 @@
-# ServerSide Google Tag Manager Proxy
+# ServerSide Google Tag Manager Proxy in PHP
 
 ## Goal 
 
