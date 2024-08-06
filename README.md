@@ -49,8 +49,8 @@ composer install
 
 ### 4. Configure GTM
 I assume you already know how Server Side GTM works.
-- On your Frontend GTM Container (Web) update the `server_container_url` parameter of your 'Google Tag' to your website URL, for example `https://yourwebsite.com`
-- On your Backend GTM Container (Server) go to 'Admin' in the top menu, then to 'Container Settings' and set the 'Server container URLs' field also to your website URL, for example `https://yourwebsite.com`
+- On your GTM Web Container update the `server_container_url` parameter of your 'Google Tag' to your website URL, for example `https://yourwebsite.com`
+- On your GTM Server Container go to 'Admin' in the top menu, then to 'Container Settings' and set the 'Server container URLs' field also to your website URL, for example `https://yourwebsite.com`
 - Publish both containers
 
 ### 5. Test
@@ -60,12 +60,12 @@ I assume you already know how Server Side GTM works.
 ### 6. Serve GTM JavaScript from your own domain
 To prevent any cross domain traffic you can [serve the GTM JavaScript from your own domain](https://developers.google.com/tag-platform/tag-manager/server-side/dependency-serving?tag=gtm). 
 
-On your website where GTM is loaded, you should replace:
-
-- `https://www.googletagmanager.com/gtm.js` by `https://yourwebsite.com/g/gtm.js`
-- `https://www.googletagmanager.com/ns.html` by `https://yourwebsite.com/g/ns.html`
-
-Don't enable Region Specific tagging, unless your website is behind one of the proxies that provide region information like Cloudflare.
+- On your GTM Server Container add the 'Google Tag Manager: Web Container' client and allow to serve `gtm.js` for the ID of your GTM Web Container.
+- Publish the GTM Server Container
+- On your website where GTM is loaded, you should replace:
+  - `https://www.googletagmanager.com/gtm.js` by `https://yourwebsite.com/g/gtm.js`
+  - `https://www.googletagmanager.com/ns.html` by `https://yourwebsite.com/g/ns.html`
+- Don't enable Region Specific tagging, unless your website is behind one of the proxies that provide region information like Cloudflare.
 
 ------
 - Created by [DeoVero BV](https://deovero.com) / [Jeroen Vermeulen](https://www.linkedin.com/in/jeroenvermeuleneu/)
