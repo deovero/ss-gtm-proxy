@@ -57,8 +57,15 @@ I assume you already know how Server Side GTM works.
 - If you open PREVIEW on the Backend GTM Container (Server) and you visit your website in the same browser, you should see the request on the preview screen.
 - Check your Google Analytics Realtime report to see if the hits are coming in.
 
-### 6. Bonus: Serve GTM JavaScript from your own domain
-On your website where GTM is loaded, you can replace `https://www.googletagmanager.com/gtm.js` by `https://yourwebsite.com/gtm/gtm.js` to serve the GTM JavaScript from your own domain.
+### 6. Serve GTM JavaScript from your own domain
+To prevent any cross domain traffic you can [serve the GTM JavaScript from your own domain](https://developers.google.com/tag-platform/tag-manager/server-side/dependency-serving?tag=gtm). 
+
+On your website where GTM is loaded, you should replace:
+
+- `https://www.googletagmanager.com/gtm.js` by `https://yourwebsite.com/g/gtm.js`
+- `https://www.googletagmanager.com/ns.html` by `https://yourwebsite.com/g/ns.html`
+
+Don't enable Region Specific tagging, unless your website is behind one of the proxies that provide region information like Cloudflare.
 
 ------
 - Created by [DeoVero BV](https://deovero.com) / [Jeroen Vermeulen](https://www.linkedin.com/in/jeroenvermeuleneu/)
