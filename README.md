@@ -65,7 +65,9 @@ composer install
 
 ### 4. Configure GTM
 I assume you already know how Server Side GTM works.
-- On your GTM Web Container update the `server_container_url` parameter of your 'Google Tag' to your website URL, for example `https://yourwebsite.com`
+- On your GTM Web Container a Tag of type 'Google Tag' must exist, containing your [Analytics Tag ID](https://support.google.com/tagmanager/answer/12002338#find-tag-id)
+  - On this Tag set the configuration parameter `server_container_url` to your website URL, for example `https://yourwebsite.com`
+  - This tag should have a trigger on 'Initialisation - All Pages'
 - On your GTM Server Container go to 'Admin' in the top menu, then to 'Container Settings' and set the 'Server container URLs' field also to your website URL, for example `https://yourwebsite.com`
 - Publish both containers
 
