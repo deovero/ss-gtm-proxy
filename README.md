@@ -68,11 +68,14 @@ I assume you already know how Server Side GTM works.
 - On your GTM Web Container a Tag of type 'Google Tag' must exist, containing your [Analytics Tag ID](https://support.google.com/tagmanager/answer/12002338#find-tag-id)
   - On this Tag set the configuration parameter `server_container_url` to your website URL, for example `https://yourwebsite.com`
   - This tag should have a trigger on 'Initialisation - All Pages'
-- On your GTM Server Container go to 'Admin' in the top menu, then to 'Container Settings' and set the 'Server container URLs' field also to your website URL, for example `https://yourwebsite.com`
-- Publish both containers
+  - Submit/Publish the Web Container
+- On your GTM Server Container go to 'Admin' in the top menu, then to 'Container Settings'
+  - In the 'Server container URLs' field add your website URL, for example `https://yourwebsite.com` as the only item
+  - Submit/Publish the Server Container
 
 ### 5. Test
-- If you open PREVIEW on the Backend GTM Container (Server) and you visit your website in the same browser, you should see the request on the preview screen.
+- If you open PREVIEW on the GTM Server Container, leave this tab open
+- Visit your website in the same browser on another tab, you should see the request on the preview page.
 - Check your Google Analytics Realtime report to see if the hits are coming in.
 
 ### 6. Serve GTM JavaScript from your own domain
