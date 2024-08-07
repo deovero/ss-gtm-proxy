@@ -72,7 +72,7 @@ I assume you already know how Server Side GTM works.
 - On your GTM Web Container a Tag of type 'Google Tag' must exist, containing your [Analytics Tag ID](https://support.google.com/tagmanager/answer/12002338#find-tag-id)
   - On this Tag set the configuration parameter `server_container_url` to your website URL, for example `https://yourwebsite.com`
   - This tag should have a trigger on 'Initialisation - All Pages'
-  - Submit/Publish the Web Container, or use Preview mode
+  - Submit/Publish the Web Container, or use Preview Mode
 
 ### 5. Test
 - If you open PREVIEW on the GTM Server Container, leave this tab open
@@ -104,4 +104,4 @@ To prevent any cross domain traffic you can [serve the GTM JavaScript from your 
 
 ------
 - Created by [DeoVero BV](https://deovero.com) / [Jeroen Vermeulen](https://www.linkedin.com/in/jeroenvermeuleneu/)
-- Thanks to [@jenssegers](https://www.linkedin.com/in/jenssegers/) for his excellent [PHP Proxy](https://github.com/jenssegers/php-proxy) script which does the heavy lifting.
+- Thanks to [@jenssegers](https://www.linkedin.com/in/jenssegers/) for his work on [PHP Proxy](https://github.com/ioflair/php-proxy) script which does the heavy lifting.
