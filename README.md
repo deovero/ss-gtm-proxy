@@ -51,7 +51,7 @@ ln -sn gtm g
 ln -sn gtm gtag
 cd gtm
 cp config.example.php config.php
-composer install --ignore-platform-req=php
+composer install
 ```
 
 ### 2. Update config.php
