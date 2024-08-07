@@ -83,7 +83,7 @@ To prevent any cross domain traffic you can [serve the GTM JavaScript from your 
 
 - On your GTM Server Container add the ['Google Tag Manager: Web Container'](https://developers.google.com/tag-platform/tag-manager/server-side/dependency-serving?tag=gtm) Client
   - Allow to serve `gtm.js` for the ID of your GTM Web Container
-  - Don't enable Region Specific settings, unless your website is behind [one of the proxies](https://developers.google.com/tag-platform/tag-manager/server-side/enable-region-specific-settings) that provide region information like Cloudflare.
+  - Don't enable Region Specific settings, unless your website is behind [one of the proxies](https://developers.google.com/tag-platform/tag-manager/server-side/enable-region-specific-settings#step_1_set_up_the_request_header_) that provide region information like Cloudflare.
 - Publish the GTM Server Container
 - Test the installation: https://gtm-docker-server.domain.com/prefix/gtm.js?id=GTM-[WEBCONTAINER] this should display the GTM JavaScript.
 - Test the proxy: https://yourwebsite.com/g/gtm.js?id=GTM-[WEBCONTAINER]
