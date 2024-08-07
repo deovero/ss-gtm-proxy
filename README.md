@@ -99,7 +99,7 @@ To prevent any cross domain traffic you can [serve the GTM JavaScript from your 
   - `https://www.googletagmanager.com/gtm.js` by `https://yourwebsite.com/g/gtm.js`
   - `https://www.googletagmanager.com/ns.html` by `https://yourwebsite.com/g/ns.html`
 - Test your website
-- Test if the tags added to the GTM Server Container work, like Google Analytics using the Real-Time overview
+- Test if the tags added to the GTM Server Container work, like Google Analytics using the Realtime overview
 
 ------
 - Created by [DeoVero BV](https://deovero.com) / [Jeroen Vermeulen](https://www.linkedin.com/in/jeroenvermeuleneu/)
