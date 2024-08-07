@@ -7,7 +7,7 @@
 
 ## Requirements
 
-- PHP, did not test minimum version yet.
+- PHP 7.4 or greater
 - Composer 2
 - Apache 2.4 or greater
 
