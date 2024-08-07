@@ -11,24 +11,25 @@
 - Composer 2
 - Apache 2.4 or greater
 
-If you are not running Apache, you will need to implement the contents of the `.htaccess` in your webserver.
+If you are not running Apache, you will need to manually implement the contents of the `.htaccess` in your webserver.
 
 ## Installation
 
 ### 0. Prerequisites
 You need to run the 2 [GTM Docker containers](https://developers.google.com/tag-platform/tag-manager/server-side/manual-setup-guide) on your own server, one for the GTM Server and one for the GTM Preview Server.
 
-URL mappings should be like this:
+These Docker containers should have a public available HTTPS proxy in front, with a public available URL with a working certificate.
+In the examples we use `https://gtm-docker-server.domain.com/prefix` as the URL of this proxy.
 
-| Incomming URL     | Edit Path       | Pass to Container  |
-|-------------------|-----------------|--------------------|
-| /prefix/gtm/*     | Strip /prefix   | GTM Preview Server |
-| /prefix/g/*       | Strip /prefix   | GTM Server         |
-| /prefix/g/gtm.js  | Strip /prefix/g | GTM Server         |
-| /prefix/g/ns.html | Strip /prefix/g | GTM Server         |
-| /prefix/gtag/*    | Strip /prefix   | GTM Server         |
+URL mappings in the proxy server should be like this:
 
-In the examples we use `https://gtm-docker-server.domain.com/prefix` as the GTM Server URL.
+| Incomming URL     | Edit Path       | Pass to Container  | Container Port |
+|-------------------|-----------------|--------------------|----------------|
+| /prefix/gtm/*     | Strip /prefix   | GTM Preview Server | 8080           |
+| /prefix/g/*       | Strip /prefix   | GTM Server         | 8080           |
+| /prefix/g/gtm.js  | Strip /prefix/g | GTM Server         | 8080           |
+| /prefix/g/ns.html | Strip /prefix/g | GTM Server         | 8080           |
+| /prefix/gtag/*    | Strip /prefix   | GTM Server         | 8080           |
 
 Test the installation:
 - https://gtm-docker-server.domain.com/prefix/gtm/healthy
