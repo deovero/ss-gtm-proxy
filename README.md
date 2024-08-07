@@ -72,6 +72,7 @@ I assume you already know how Server Side GTM works.
 - On your GTM Server Container go to 'Admin' in the top menu, then to 'Container Settings'
   - In the 'Server container URLs' field add your website URL, for example `https://yourwebsite.com` as the only item
   - Submit/Publish the Server Container
+    Wait a couple of minutes for the changes to be applied by the Docker container
 
 ### 5. Test
 - If you open PREVIEW on the GTM Server Container, leave this tab open
@@ -88,6 +89,7 @@ To prevent any cross domain traffic you can [serve the GTM JavaScript from your 
       that provide region information like Cloudflare.
     - You have [manually provided](https://developers.google.com/tag-platform/tag-manager/server-side/enable-region-specific-settings#custom-headers) the geo location headers
 - Publish the Server Container
+- Wait a couple of minutes for the changes to be applied by the Docker container
 - Test the installation: https://gtm-docker-server.domain.com/prefix/gtm.js?id=GTM-[WEBCONTAINER] this should display the GTM JavaScript.
 - Test the proxy: https://yourwebsite.com/g/gtm.js?id=GTM-[WEBCONTAINER]
 - On your website where GTM is loaded, you should replace:
