@@ -32,15 +32,15 @@ If you are not running Apache, you will need to manually implement the contents 
 | /prefix/g/ns.html | Strip /prefix/g | GTM Server         | 8080           |
 | /prefix/gtag/*    | Strip /prefix   | GTM Server         | 8080           |
 
-Test the installation:
-- https://gtm-docker-server.domain.com/prefix/gtm/healthy
-- https://gtm-docker-server.domain.com/prefix/g/healthy
-- https://gtm-docker-server.domain.com/prefix/gtag/healthy
+- Test the installation:
+  - https://gtm-docker-server.domain.com/prefix/gtm/healthy
+  - https://gtm-docker-server.domain.com/prefix/g/healthy
+  - https://gtm-docker-server.domain.com/prefix/gtag/healthy
 
-These will return a 400 error until you complete step 6, these URL also need the `?id=GTM-[WEBCONTAINER]` parameter to work.
-
-- https://gtm-docker-server.domain.com/prefix/g/gtm.js 
-- https://gtm-docker-server.domain.com/prefix/g/ns.html
+- These URLs will return a 400 error until you complete step 6
+  - https://gtm-docker-server.domain.com/prefix/g/gtm.js
+  - https://gtm-docker-server.domain.com/prefix/g/ns.html
+  - these URLs also need the correct `?id=GTM-[WEBCONTAINER]` parameter to work
 
 ### 1. Install
 Clone this repository, and execute the installation steps:
