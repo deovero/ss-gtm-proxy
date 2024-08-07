@@ -8,7 +8,7 @@
 ## Requirements
 
 - PHP 7.4 or greater
-- Composer 2
+- Composer 2.x
 - Apache 2.4 or greater
 
 If you are not running Apache, you will need to manually implement the contents of the `.htaccess` in your webserver.
