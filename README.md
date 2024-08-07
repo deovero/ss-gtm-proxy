@@ -100,6 +100,7 @@ To prevent any cross domain traffic you can [serve the GTM JavaScript from your 
   - `https://www.googletagmanager.com/ns.html` by `https://yourwebsite.com/g/ns.html`
 - Test your website
 - Test if the tags added to the GTM Server Container work, like Google Analytics using the Realtime overview
+  - To use GT4 tracking server-side, you need to add the 'Google Analytics GA4' tag on the Server Container with a trigger on All Pages
 
 ------
 - Created by [DeoVero BV](https://deovero.com) / [Jeroen Vermeulen](https://www.linkedin.com/in/jeroenvermeuleneu/)
