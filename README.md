@@ -28,6 +28,18 @@ URL mappings should be like this:
 | /prefix/g/ns.html | Strip /prefix/g | GTM Server         |
 | /prefix/gtag/*    | Strip /prefix   | GTM Server         |
 
+In the examples we use `https://gtm-docker-server.domain.com/prefix` as the GTM Server URL.
+
+Test the installation:
+- https://gtm-docker-server.domain.com/prefix/gtm/healthy
+- https://gtm-docker-server.domain.com/prefix/g/healthy
+- https://gtm-docker-server.domain.com/prefix/gtag/healthy
+
+These will return a 400 error until you complete step 6, these URL also need the `?id=GTM-[WEBCONTAINER]` parameter to work.
+
+- https://gtm-docker-server.domain.com/prefix/g/gtm.js 
+- https://gtm-docker-server.domain.com/prefix/g/ns.html
+
 ### 1. Install
 Clone this repository, and execute the installation steps:
 ```
@@ -44,8 +56,10 @@ composer install
 - Update `~/httpdocs/gtm/config.php` with the path to your GTM server, for example `https://gtm-docker-server.domain.com/prefix`
 
 ### 3. Verify
-- Visit https://yourwebsite.com/g/healthy, this should show `ok`
+
 - Visit https://yourwebsite.com/gtm/healthy, this should also show `ok`
+- Visit https://yourwebsite.com/g/healthy, this should show `ok`
+- Visit https://yourwebsite.com/gtag/healthy, this should show `ok`
 
 ### 4. Configure GTM
 I assume you already know how Server Side GTM works.
@@ -62,6 +76,8 @@ To prevent any cross domain traffic you can [serve the GTM JavaScript from your 
 
 - On your GTM Server Container add the 'Google Tag Manager: Web Container' client and allow to serve `gtm.js` for the ID of your GTM Web Container.
 - Publish the GTM Server Container
+- Test the installation: https://gtm-docker-server.domain.com/prefix/gtm.js?id=GTM-[WEBCONTAINER] this should display the GTM JavaScript.
+- Test the proxy: https://yourwebsite.com/g/gtm.js?id=GTM-[WEBCONTAINER]
 - On your website where GTM is loaded, you should replace:
   - `https://www.googletagmanager.com/gtm.js` by `https://yourwebsite.com/g/gtm.js`
   - `https://www.googletagmanager.com/ns.html` by `https://yourwebsite.com/g/ns.html`
