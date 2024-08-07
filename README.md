@@ -47,8 +47,8 @@ Clone this repository, and execute the installation steps:
 ```
 cd ~/httpdocs
 git clone https://github.com/deovero/ss-gtm-proxy gtm
-ln -s gtm g
-ln -s gtm gtag
+ln -sn gtm g
+ln -sn gtm gtag
 cd gtm
 cp config.example.php config.php
 composer install
