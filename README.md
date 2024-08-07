@@ -51,7 +51,7 @@ ln -sn gtm g
 ln -sn gtm gtag
 cd gtm
 cp config.example.php config.php
-composer install
+composer install --ignore-platform-req=php
 ```
 
 ### 2. Update config.php
@@ -65,14 +65,14 @@ composer install
 
 ### 4. Configure GTM
 I assume you already know how Server Side GTM works.
-- On your GTM Web Container a Tag of type 'Google Tag' must exist, containing your [Analytics Tag ID](https://support.google.com/tagmanager/answer/12002338#find-tag-id)
-  - On this Tag set the configuration parameter `server_container_url` to your website URL, for example `https://yourwebsite.com`
-  - This tag should have a trigger on 'Initialisation - All Pages'
-  - Submit/Publish the Web Container
 - On your GTM Server Container go to 'Admin' in the top menu, then to 'Container Settings'
   - In the 'Server container URLs' field add your website URL, for example `https://yourwebsite.com` as the only item
   - Submit/Publish the Server Container
     Wait a couple of minutes for the changes to be applied by the Docker container
+- On your GTM Web Container a Tag of type 'Google Tag' must exist, containing your [Analytics Tag ID](https://support.google.com/tagmanager/answer/12002338#find-tag-id)
+  - On this Tag set the configuration parameter `server_container_url` to your website URL, for example `https://yourwebsite.com`
+  - This tag should have a trigger on 'Initialisation - All Pages'
+  - Submit/Publish the Web Container, or use Preview mode
 
 ### 5. Test
 - If you open PREVIEW on the GTM Server Container, leave this tab open
