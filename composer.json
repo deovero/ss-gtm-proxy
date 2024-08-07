@@ -1,7 +1,5 @@
 {
     "require": {
-        "jenssegers/proxy": "^3.0",
-        "laminas/laminas-diactoros": "^2.0",
-        "laminas/laminas-httphandlerrunner": "^2.0"
+        "jenssegers/proxy": ">=3.1"
     }
 }

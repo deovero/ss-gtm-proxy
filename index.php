@@ -12,13 +12,13 @@ $config = require(__DIR__."/config.php");
 
 use Proxy\Proxy;
 use Proxy\Adapter\Guzzle\GuzzleAdapter;
-use Proxy\Filter\RemoveEncodingFilter;
 use Laminas\Diactoros\ServerRequestFactory;
 
-$request = ServerRequestFactory::fromGlobals();
+$request = ServerRequestFactory::fromGlobals()
+		->withHeader('accept-encoding', 'deflate, gzip'); // Prevent zstd, older libcurl can't handle this.
+
 $guzzle = new GuzzleHttp\Client();
 $proxy = new Proxy(new GuzzleAdapter($guzzle));
-$proxy->filter(new RemoveEncodingFilter());
 
 try {
     $response = $proxy->forward($request)->to($config['gtm_url']);
