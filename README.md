@@ -84,17 +84,22 @@ To prevent any cross domain traffic you can [serve the GTM JavaScript from your 
 
 - On your GTM Server Container add the ['Google Tag Manager: Web Container'](https://developers.google.com/tag-platform/tag-manager/server-side/dependency-serving?tag=gtm) Client
   - Allow to serve `gtm.js` for the ID of your GTM Web Container
-  - Only enable Region Specific settings if either:
-    - Your website is behind [one of the proxies](https://developers.google.com/tag-platform/tag-manager/server-side/enable-region-specific-settings#step_1_set_up_the_request_header_)
-      that provide region information like Cloudflare.
-    - You have [manually provided](https://developers.google.com/tag-platform/tag-manager/server-side/enable-region-specific-settings#custom-headers) the geo location headers
+- On your GTM Server Container edit the GT4 Client
+  - Enable 'Default gtag.js paths for specific IDs'
+  - Fill in the measurement ID of your Analytics, this looks like G-XXXXXXXXXX
+- On these two settings only enable Region Specific settings if either:
+  - Your website is behind [one of the proxies](https://developers.google.com/tag-platform/tag-manager/server-side/enable-region-specific-settings#step_1_set_up_the_request_header_)
+    that provide region information like Cloudflare.
+  - You have [manually provided](https://developers.google.com/tag-platform/tag-manager/server-side/enable-region-specific-settings#custom-headers) the geo location headers  
 - Publish the Server Container
 - Wait a couple of minutes for the changes to be applied by the Docker container
 - Test the installation: https://gtm-docker-server.domain.com/prefix/gtm.js?id=GTM-[WEBCONTAINER] this should display the GTM JavaScript.
 - Test the proxy: https://yourwebsite.com/g/gtm.js?id=GTM-[WEBCONTAINER]
-- On your website where GTM is loaded, you should replace:
+- On your website source code where GTM is loaded, you should replace:
   - `https://www.googletagmanager.com/gtm.js` by `https://yourwebsite.com/g/gtm.js`
   - `https://www.googletagmanager.com/ns.html` by `https://yourwebsite.com/g/ns.html`
+- Test your website
+- Test if the tags added to the GTM Server Container work, like Google Analytics using the Real-Time overview
 
 ------
 - Created by [DeoVero BV](https://deovero.com) / [Jeroen Vermeulen](https://www.linkedin.com/in/jeroenvermeuleneu/)
