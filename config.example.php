@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'gtm_url' => 'https://tracking-server.com/prefix'
+    'gtm_url' => 'https://gtm-docker-server.domain.com/prefix'
 ];
