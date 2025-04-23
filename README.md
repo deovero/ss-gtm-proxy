@@ -92,7 +92,8 @@ To prevent any cross domain traffic you can [serve the GTM JavaScript from your 
   - You have [manually provided](https://developers.google.com/tag-platform/tag-manager/server-side/enable-region-specific-settings#custom-headers) the geo location headers  
 - Publish the Server Container
 - Wait a couple of minutes for the changes to be applied by the Docker container
-- Test the installation: https://gtm-docker-server.domain.com/prefix/gtm.js?id=GTM-[WEBCONTAINER] this should display the GTM JavaScript.
+- Press the [Preview] button on the GTM Server Container management page
+- Test the installation: https://gtm-docker-server.domain.com/prefix/gtm.js?id=GTM-[WEBCONTAINER] this should display the GTM JavaScript. If you are using Region Specific settings, this may fail if the `gtm-docker-server.domain.com` is not passing GeoIP information.
 - Test the proxy: https://yourwebsite.com/g/gtm.js?id=GTM-[WEBCONTAINER]
 - On your website source code where GTM is loaded, you should replace:
   - `https://www.googletagmanager.com/gtm.js` by `https://yourwebsite.com/g/gtm.js`
