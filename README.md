@@ -2,8 +2,10 @@
 
 ## Goal 
 
-- Place this proxy script on your webserver to be able to use your website's domain as `server_container_url` in GTM.
+- Place this proxy script on your webserver to be able to use your website's main domain as `server_container_url` in GTM.
 - You can also use your website's domain as 'Server container URLs' on the Container Settings so you can preview requests without cross-domain cookie problems.
+
+This is best practice [according to Google](https://developers.google.com/tag-platform/tag-manager/server-side/custom-domain?option=same-origin).
 
 ```mermaid
 graph TD
