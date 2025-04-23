@@ -7,25 +7,33 @@
 
 ```mermaid
 graph TD
-    A@{ shape: "stadium", label: "Visitor's Browser" } -- accesses --> B_Content(Application Webserver);
+    Browser@{ shape: "stadium", label: "Visitor's Browser" }
 
-    subgraph B [https\://www\.yourdomain\.com]
+    subgraph AppServer [https\://www\.yourdomain\.com]
         direction TB
-        B_Content@{shape: "document", label: Website Content}
-        B_Proxy[ss-gtm-proxy]:::highlight
+        Website_Content@{shape: "document", label: Website Content}
+        SsGtmProxy[ss-gtm-proxy]
     end
 
-    B_Content -- serves HTML --> A;
-    A -- requests GTM JavaScript --> B_Proxy;
-    B_Proxy -- forwards request --> D[HTTPS Proxy];
+    Browser -- request --> Website_Content;
+    Website_Content -- HTML --> Browser;
+    Browser -- GTM requests
+     /g/*
+     /gtag/*
+     /gtm/*
+     --> SsGtmProxy;
+    SsGtmProxy -- forwards request --> Https_Proxy;
 
-    subgraph C [https\://gtm.anydomain.com/prefix]
+    subgraph GtmServer [https\://gtm.anydomain.com/prefix]
+        Https_Proxy[HTTPS Proxy]
         direction TB
-        D -- forwards request --> E[Server-Side GTM Container];
+        Https_Proxy -- /prefix/g/* 
+             /prefix/gtag/* --> GtmServerContainer[GTM Server Container];
+        Https_Proxy -- /prefix/gtm/* --> GtmPreviewContainer[GTM Preview Container];
     end
 
     %% Style definition for highlighting
-    classDef highlight stroke-width:4px
+	style SsGtmProxy stroke-width:4px
 ```
 
 ## Requirements
