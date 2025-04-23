@@ -19,10 +19,9 @@ If you are not running Apache, you will need to manually implement the contents 
 - You need to run the 2 [GTM Docker containers](https://developers.google.com/tag-platform/tag-manager/server-side/manual-setup-guide) on your own server
   - one for the GTM Server 
   - one for the GTM Preview Server
-- These Docker containers should have a public available HTTPS proxy in front, with a public available URL with a working certificate. 
+- These Docker containers should have a public available HTTPS proxy (Caddy/Haproxy/Nginx) in front, with a public available URL with a working certificate. 
   - In the examples we use `https://gtm-docker-server.domain.com/prefix` as the URL of this proxy.
-
-- URL mappings in the proxy server should be like this:
+- URL mappings in the container proxy server should be like this:
 
 | Incomming URL     | Edit Path       | Pass to Container  | Container Port |
 |-------------------|-----------------|--------------------|----------------|
