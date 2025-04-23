@@ -5,6 +5,29 @@
 - Place this proxy script on your webserver to be able to use your website's domain as `server_container_url` in GTM.
 - You can also use your website's domain as 'Server container URLs' on the Container Settings so you can preview requests without cross-domain cookie problems.
 
+```mermaid
+graph TD
+    A@{ shape: "stadium", label: "Visitor's Browser" } -- accesses --> B_Content(Application Webserver);
+
+    subgraph B [https\://www\.yourdomain\.com]
+        direction TB
+        B_Content@{shape: "document", label: Website Content}
+        B_Proxy[ss-gtm-proxy]:::highlight
+    end
+
+    B_Content -- serves HTML --> A;
+    A -- requests GTM JavaScript --> B_Proxy;
+    B_Proxy -- forwards request --> D[HTTPS Proxy];
+
+    subgraph C [https\://gtm.anydomain.com/prefix]
+        direction TB
+        D -- forwards request --> E[Server-Side GTM Container];
+    end
+
+    %% Style definition for highlighting
+    classDef highlight stroke-width:4px
+```
+
 ## Requirements
 
 - PHP 7.4 or greater
