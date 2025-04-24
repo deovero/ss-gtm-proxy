@@ -87,7 +87,7 @@ composer install
 ```
 
 ### 2. Update config.php
-- Update `~/httpdocs/gtm/config.php` with the path to your GTM server, for example `https://gtm-docker-server.domain.com/prefix`
+- Update `~/httpdocs/gtm/config.php` with the paths to your GTM server, for example `https://gtm-docker-server.domain.com/prefix`
 
 ### 3. Verify
 
