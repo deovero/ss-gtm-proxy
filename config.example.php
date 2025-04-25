@@ -13,7 +13,7 @@ switch ($siteDomain) {
             'gtm_url' => 'https://gtm-docker-server.domain.com/prefix-two'
         ];
     default:
-        return [
-            'gtm_url' => 'https://gtm-docker-server.domain.com/prefix-x'
-        ];
+        http_response_code(404);
+        printf("ERROR: Invalid domain '%s'", $siteDomain);
+        exit();
 }

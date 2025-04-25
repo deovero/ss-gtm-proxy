@@ -15,7 +15,7 @@ use Proxy\Adapter\Guzzle\GuzzleAdapter;
 use Laminas\Diactoros\ServerRequestFactory;
 
 $request = ServerRequestFactory::fromGlobals()
-		->withHeader('accept-encoding', 'deflate, gzip'); // Prevent zstd, older libcurl can't handle this.
+    ->withHeader('accept-encoding', 'deflate, gzip'); // Prevent zstd, older libcurl can't handle this.
 
 $guzzle = new GuzzleHttp\Client();
 $proxy = new Proxy(new GuzzleAdapter($guzzle));

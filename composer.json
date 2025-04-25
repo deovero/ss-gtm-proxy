@@ -1,5 +1,6 @@
 {
     "require": {
-        "ioflair/php-proxy": "^4.0"
+        "ioflair/php-proxy": "^4.0",
+        "php": ">=7.3"
     }
 }
