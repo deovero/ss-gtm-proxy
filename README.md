@@ -3,7 +3,7 @@
 ## Goal 
 
 - Place this proxy script on your webserver to be able to use your website's main domain as `server_container_url` [in GTM](https://developers.google.com/tag-platform/tag-manager/server-side/send-data?option=GTM#google-tag:-ga-4).
-- You can also use your website's domain as 'Server container URLs' on the Container Settings so you can preview requests without cross-domain cookie problems.
+- You can also use your website's domain as 'Server container URLs' on the [Container Settings](https://developers.google.com/tag-platform/tag-manager/server-side/manual-setup-guide#configure_the_server_container_url) so you can preview requests without cross-domain cookie problems.
 
 This is best practice [according to Google](https://developers.google.com/tag-platform/tag-manager/server-side/custom-domain?option=same-origin).
 
